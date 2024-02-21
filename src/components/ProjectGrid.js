@@ -4,28 +4,28 @@ import React from 'react'
 const projects = [
   {
     title: 'reverie',
-    tags: ['hackathon project', 'ux design'],
+    tags: ['hackathon', 'ux design'],
     image: './images/reverieThumb.png',
-    desc: 'awarded 1st place out of 400+ participants. created the idea, script, presentation, user research, wireframes, mockups, custom graphics, video editing, and ux/ui design in figma prototype, utilizing adobe creative suite',
+    desc: 'made in 24h. awarded 1st place out of 400+ participants for hopperhacks 2024. created the idea, presentation, video editing, ux/ui design, and custom graphics.',
   },
   {
     title: 'storiator',
-    tags: ['volunteer', 'ux design', 'frontend'],
+    tags: ['startup', 'ux design', 'frontend'],
     image: './images/storiatorThumb.png',
-    desc: 'awarded 3x place out of 700 participants. designed user experience and programmed frontend to deploy functional website for nwhacks 2024.',
+    desc: 'designed user experience through market research and competitor analysis, programmed frontend with react, chakra ui, and typescript.',
   },
   {
     title: 'studyscout',
-    tags: ['hackathon project', 'ux design', 'frontend'],
+    tags: ['hackathon', 'ux design', 'frontend'],
     image: './images/studyThumb.png',
-    desc: 'designed user experience and programmed frontend to deploy functional website for nwhacks 2024.',
+    desc: 'made in 24h. awarded 3x place out of 700 participants for nwhacks 2024. designed ux/ui and programmed frontend in react and typescript to deploy functional website.',
   },
 
   {
-    title: 'studyscout',
-    tags: ['hackathon project', 'ux design', 'frontend'],
-    image: './logo192.png',
-    desc: 'designed user experience and programmed frontend to deploy functional website for nwhacks 2024.',
+    title: 'pawfect one',
+    tags: ['hackathon project', 'ux design'],
+    image: './images/pawfectThumb.png',
+    desc: 'made in 12h. awarded top 5 finalist out of 250 participants for my first hackathon, hackcamp 2023. designed user experience, custom graphics, and presentation video for figma prototype.',
   },
 ]
 
@@ -40,7 +40,7 @@ function ProjectComponent({ title, tags, image, desc }) {
         bgPosition="top"
         bgImage={`url(${image})`} // Use template literals to set the background image
         bgSize="cover" // Ensure the background image covers the entire box
-        boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
+        boxShadow="0 4px 12px rgba(63, 57, 69, 0.1)"
         borderRadius="6px"
       ></Box>
       <Text
@@ -73,7 +73,7 @@ function ProjectGrid() {
   return (
     <Grid
       templateColumns={['1fr', '1fr', '1fr 1fr']}
-      paddingInline="1rem"
+      marginInline={['1rem', '1rem', '4rem']}
       gap={4}
     >
       {projects.map((project, index) => (
