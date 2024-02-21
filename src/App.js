@@ -1,24 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import { Box, Stack, Navbar, Text, Flex, Button } from '@chakra-ui/react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Stack>
+        <Flex justifyContent="space-between">
+          <Text fontFamily="Outfit" fontSize="1rem" padding="1rem">
+            patti tani
+          </Text>
+          <Flex>
+          <Text fontFamily="Outfit" fontSize="1rem" padding="1rem">
+            work
+          </Text>
+          <Text fontFamily="Outfit" fontSize="1rem" padding="1rem">
+            play
+          </Text>
+          <Text fontFamily="Outfit" fontSize="1rem" padding="1rem">
+            about
+          </Text>
+          <Text fontFamily="Outfit" fontSize="1rem" padding="1rem">
+            resume
+          </Text>
+          </Flex>
+
+
+        </Flex>
+      </Stack>
+    </Box>
   );
 }
 
