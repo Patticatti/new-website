@@ -1,12 +1,17 @@
 import { Box, Stack, Text, Heading, Flex } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
 import ProjectGrid from './components/ProjectGrid'
+import { useRef } from 'react'
 
 function App() {
+  const scrollWork = useRef(null)
+  const scrollToWork = () => {
+    scrollWork.current?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <Box bg="white">
       <Stack alignItems="center">
-        <Navbar />
+        <Navbar scrollToWork={scrollToWork} />
         <Flex
           direction={['column-reverse', 'column-reverse', 'row']}
           justifyContent="space-between"
@@ -49,11 +54,11 @@ function App() {
               >
                 product designer
               </Text>{' '}
-              who designs and codes accessible user experiences.
+              who designs and codes accessible user experiences at rapid speeds.
             </Text>
           </Stack>
           <Text
-            fontSize={['18rem', '18rem', '20rem']}
+            fontSize={['16rem', '18rem', '20rem']}
             textShadow="0 20px 20px rgba(0, 0, 0, 0.25)"
           >
             😻
@@ -64,6 +69,7 @@ function App() {
           fontSize="4xl"
           letterSpacing="-0.04em"
           fontWeight="regular"
+          ref={scrollWork}
         >
           check out my stuff 👇
         </Heading>
