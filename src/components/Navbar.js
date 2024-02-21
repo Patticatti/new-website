@@ -2,7 +2,8 @@ import { Text, Flex} from '@chakra-ui/react';
 
 function Navbar() {
   return (
-        <Flex justifyContent="space-between">
+        <Flex justifyContent="space-between" backgroundColor="rgba(255, 255, 255, 0.5)"
+        backdropFilter="blur(5px)" position="fixed" width="100%">
           <Text fontFamily="Outfit" fontSize="1rem" padding="1rem">
             patti tani
           </Text>

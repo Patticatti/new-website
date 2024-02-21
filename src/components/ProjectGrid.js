@@ -35,6 +35,7 @@ function ProjectComponent({ title, tags, image, desc }) {
           bgImage={`url(${image})`} // Use template literals to set the background image
           bgSize="cover" // Ensure the background image covers the entire box
           boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
+          borderRadius="6px"
         >
         </Box>
         <Text marginTop="1.4rem" style={{
