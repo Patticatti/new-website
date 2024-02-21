@@ -7,6 +7,7 @@ const colors = {
       500: `#52DEEB`,
       300: `#78F3FE`,
     },
+    gradient:`linear-gradient(to right, #FF00A8, #FFB321)`,
     transparent: `#00000000`,
     warning: `#FE8311`,
   };
@@ -36,7 +37,9 @@ const components = {
     Text:{
         baseStyle: {
         color: 'black', // Your desired text color
-        fontFamily: `Outfit`,
+        fontFamily: `Inter`,
+        fontSize: `1rem`,
+        letterSpacing: '-0.02em',
     },
 },
     Box:{
@@ -44,6 +47,14 @@ const components = {
         background: `white`,
     },
 },
+Heading: {
+    baseStyle: {
+        fontFamily: `Outfit`,
+        color: 'black',
+        fontWeight:`light`,
+    },
+
+}
 };
 
 export const chakraTheme = extendTheme({
