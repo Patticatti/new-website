@@ -23,8 +23,20 @@ function ProjectComponent({ title, tags, image }) {
           bgSize="cover" // Ensure the background image covers the entire box
           boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
         >
-          {/* Remove the nested Image component */}
         </Box>
+        <Text marginTop="1rem"style={{
+                  backgroundImage: 'linear-gradient(to right, #FF00A8, #FF9921)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+                {tags.map((tag, index) => (
+                <span key={index}>
+                    {tag}
+                    {index !== tags.length - 1 && <>&nbsp;&bull;&nbsp;</>}
+                </span>
+                ))}
+            </Text>
+            <Heading>{title}</Heading>
       </Stack>
     );
 }
