@@ -52,6 +52,7 @@ Heading: {
         fontFamily: `Outfit`,
         color: 'black',
         fontWeight:`light`,
+        letterSpacing:`-0.03em`,
     },
 
 }

@@ -1,38 +1,34 @@
-import { Text, Stack, Box, Grid } from '@chakra-ui/react';
-
+import { Text, Stack, Image, Grid, Box,Heading } from '@chakra-ui/react';
 
 const projects = [
     {
-      title: "Storiator",
+      title: "storiator",
       tags: ["volunteer", "ux design", "frontend"],
-      image: "./public/logo192.png"
+      image: "./images/storiator.png",
     },
     {
-      title: "Project 2",
-      tags: ["backend", "database", "API"],
-      image: "./public/logo192.png"
+      title: "studyscout",
+      tags: ["hackathon project", "ux design", "frontend"],
+      image: "./logo192.png"
     },
     // Add more projects as needed
 ];
 
-function ProjectComponent({ title, tags, image }){
-    return(
-        <Stack marginBlock="2rem">
-            <Box height="300px" bgImage={image} boxShadow="0 20px 20px rgba(0, 0, 0, 0.25)"/>
-            <Text>
-        {tags.map((tag, index) => (
-          <span key={index}>
-            {tag}
-            {index !== tags.length - 1 && <>&nbsp;&bull;&nbsp;</>}
-          </span>
-        ))}
-      </Text>
-
-        </Stack>
-
-
+function ProjectComponent({ title, tags, image }) {
+    return (
+      <Stack marginBlock="2rem">
+        <Box
+          height="300px"
+          bgImage={`url(${image})`} // Use template literals to set the background image
+          bgSize="cover" // Ensure the background image covers the entire box
+          boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
+        >
+          {/* Remove the nested Image component */}
+        </Box>
+      </Stack>
     );
 }
+  
 
 function ProjectGrid() {
   return (
