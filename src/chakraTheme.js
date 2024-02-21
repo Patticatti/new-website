@@ -1,14 +1,8 @@
 import { extendTheme } from '@chakra-ui/react';
 
 const colors = {
-    brand: {
-      deep: `#FF00A8`,
-      700: `#FF0098`,
-      500: `#FB5680`,
-      400: `#F87CC7`,
-      300: `#FAB9D8`,
-    },
-    secondary: {
+    primary: `#FF00A8`,
+    orange: {
       700: `#FFB321`,
       500: `#52DEEB`,
       300: `#78F3FE`,
@@ -16,6 +10,12 @@ const colors = {
     transparent: `#00000000`,
     warning: `#FE8311`,
   };
+
+const global = {
+    body: {
+        bg: 'white', // Set the background color to white
+      },
+}
 
 const components = {
     Button: {
@@ -33,6 +33,17 @@ const components = {
         },
       },
     },
+    Text:{
+        baseStyle: {
+        color: 'black', // Your desired text color
+        fontFamily: `Outfit`,
+    },
+},
+    Box:{
+        baseStyle: {
+        background: `white`,
+    },
+},
 };
 
 export const chakraTheme = extendTheme({
@@ -42,5 +53,6 @@ export const chakraTheme = extendTheme({
       useSystemColorMode: false,
     },
     components,
+    global,
   });
   
