@@ -1,13 +1,14 @@
 import { Box, Stack, Text, Heading, Flex } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
 import ProjectGrid from './components/ProjectGrid'
-import { useRef } from 'react'
+import { useRef, useDisclosure } from 'react'
 
 function App() {
   const scrollWork = useRef(null)
   const scrollToWork = () => {
     scrollWork.current?.scrollIntoView({ behavior: 'smooth' })
   }
+  const { isOpen, onToggle } = useDisclosure()
   return (
     <Box bg="white">
       <Stack alignItems="center">
@@ -74,6 +75,26 @@ function App() {
           check out my stuff 👇
         </Heading>
         <ProjectGrid />
+        <Stack marginBlock={['12rem', '12rem', '16rem']} gap="0">
+          <Text color="base.500">im a firm believer that...</Text>
+          <Heading fontSize="6xl">
+            you can learn{' '}
+            <Heading
+              as="span"
+              fontSize="6xl"
+              style={{
+                backgroundImage: 'linear-gradient(to right, #FF00A8, #FFB321)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              anything ✨
+            </Heading>
+          </Heading>
+          <Text color="base.500" textAlign="end" marginTop="1rem">
+            if you just try.
+          </Text>
+        </Stack>
       </Stack>
     </Box>
   )

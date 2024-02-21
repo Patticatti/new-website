@@ -23,7 +23,7 @@ const projects = [
 
   {
     title: 'pawfect one',
-    tags: ['hackathon project', 'ux design'],
+    tags: ['hackathon', 'ux design'],
     image: './images/pawfectThumb.png',
     desc: 'made in 12h. awarded top 5 finalist out of 250 participants for my first hackathon, hackcamp 2023. designed user experience, custom graphics, and presentation video for figma prototype.',
   },
