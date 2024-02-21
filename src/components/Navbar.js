@@ -9,6 +9,7 @@ function Navbar({ scrollToWork }) {
       backdropFilter="blur(5px)"
       position="fixed"
       width="100%"
+      zIndex="100"
     >
       <Text
         fontFamily="Outfit"

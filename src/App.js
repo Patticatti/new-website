@@ -1,14 +1,13 @@
 import { Box, Stack, Text, Heading, Flex } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
 import ProjectGrid from './components/ProjectGrid'
-import { useRef, useDisclosure } from 'react'
+import { useRef } from 'react'
 
 function App() {
   const scrollWork = useRef(null)
   const scrollToWork = () => {
     scrollWork.current?.scrollIntoView({ behavior: 'smooth' })
   }
-  const { isOpen, onToggle } = useDisclosure()
   return (
     <Box bg="white">
       <Stack alignItems="center">

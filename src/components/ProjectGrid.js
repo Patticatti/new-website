@@ -42,6 +42,8 @@ function ProjectComponent({ title, tags, image, desc }) {
         bgSize="cover" // Ensure the background image covers the entire box
         boxShadow="0 4px 12px rgba(63, 57, 69, 0.1)"
         borderRadius="6px"
+        transition="filter 0.3s ease-in-out"
+        _hover={{ filter: 'brightness(0.5)' }}
       ></Box>
       <Text
         as="span"
@@ -62,7 +64,12 @@ function ProjectComponent({ title, tags, image, desc }) {
           bgSize="cover"
         />
       </Stack>
-      <Text lineHeight="1.4em" marginTop="0.5rem" color="base.500">
+      <Text
+        lineHeight="1.4em"
+        marginTop="0.5rem"
+        color="base.500"
+        fontWeight="light"
+      >
         {desc}
       </Text>
     </Stack>
