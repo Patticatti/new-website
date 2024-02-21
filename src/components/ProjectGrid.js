@@ -1,4 +1,4 @@
-import { Text, Stack, Image, Grid, Box,Heading } from '@chakra-ui/react';
+import { Text, Stack, Grid, Box,Heading } from '@chakra-ui/react';
 
 const projects = [
     {
@@ -37,17 +37,17 @@ function ProjectComponent({ title, tags, image, desc }) {
           boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
         >
         </Box>
-        <Text marginTop="1.4rem"style={{
-                  backgroundImage: 'linear-gradient(to right, #FF00A8, #FF9921)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}>
-                {tags.map((tag, index) => (
-                <span key={index}>
-                    {tag}
-                    {index !== tags.length - 1 && <>&nbsp;&bull;&nbsp;</>}
-                </span>
-                ))}
+        <Text marginTop="1.4rem" style={{
+            backgroundImage: 'linear-gradient(to right, #FF00A8, #FF9921)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+        }}>
+            {tags.map((tag, index) => (
+            <span key={index}>
+                {index !== 0 && <>&nbsp;&bull;&nbsp;</>}
+                {tag}
+            </span>
+            ))}
         </Text>
         <Stack direction="row" alignItems="center">
             <Heading>{title}</Heading>
@@ -63,7 +63,7 @@ function ProjectComponent({ title, tags, image, desc }) {
 
 function ProjectGrid() {
   return (
-    <Grid templateColumns="1fr 1fr" padding="1rem" gap={4}>
+    <Grid templateColumns={["1fr","1fr","1fr 1fr"]} paddingInline="1rem" gap={4}>
       {projects.map((project, index) => (
         <ProjectComponent key={index} {...project} />
       ))}
