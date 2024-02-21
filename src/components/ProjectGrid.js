@@ -5,16 +5,29 @@ const projects = [
       title: "storiator",
       tags: ["volunteer", "ux design", "frontend"],
       image: "./images/storiator.png",
+      desc: "awarded 3x place out of 700 participants. designed user experience and programmed frontend to deploy functional website for nwhacks 2024."
     },
     {
       title: "studyscout",
       tags: ["hackathon project", "ux design", "frontend"],
-      image: "./logo192.png"
+      image: "./logo192.png",
+      desc: "designed user experience and programmed frontend to deploy functional website for nwhacks 2024."
     },
-    // Add more projects as needed
+    {
+        title: "storiator",
+        tags: ["volunteer", "ux design", "frontend"],
+        image: "./images/storiator.png",
+        desc: "awarded 3x place out of 700 participants. designed user experience and programmed frontend to deploy functional website for nwhacks 2024."
+      },
+      {
+        title: "studyscout",
+        tags: ["hackathon project", "ux design", "frontend"],
+        image: "./logo192.png",
+        desc: "designed user experience and programmed frontend to deploy functional website for nwhacks 2024."
+      },
 ];
 
-function ProjectComponent({ title, tags, image }) {
+function ProjectComponent({ title, tags, image, desc }) {
     return (
       <Stack marginBlock="2rem">
         <Box
@@ -24,7 +37,7 @@ function ProjectComponent({ title, tags, image }) {
           boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
         >
         </Box>
-        <Text marginTop="1rem"style={{
+        <Text marginTop="1.4rem"style={{
                   backgroundImage: 'linear-gradient(to right, #FF00A8, #FF9921)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -35,8 +48,14 @@ function ProjectComponent({ title, tags, image }) {
                     {index !== tags.length - 1 && <>&nbsp;&bull;&nbsp;</>}
                 </span>
                 ))}
-            </Text>
+        </Text>
+        <Stack direction="row" alignItems="center">
             <Heading>{title}</Heading>
+            <Box bgImage={`./images/Arrow 2.svg`} width="1rem" height="1rem" bgSize="cover"/>
+        </Stack>
+        <Text lineHeight="1.4em" marginTop="0.5rem">
+            {desc}
+        </Text> 
       </Stack>
     );
 }
