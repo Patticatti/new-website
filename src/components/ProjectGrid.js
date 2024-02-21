@@ -6,7 +6,7 @@ const projects = [
     title: 'reverie',
     tags: ['hackathon project', 'ux design'],
     image: './images/reverieThumb.png',
-    desc: 'awarded 1st place out of 400+ participants. created the idea, script, presentation, user research, wireframes, mockups, custom graphics, video editing, and ux/ui design in figma prototype, utilizing adobe creative suite',
+    desc: 'made in 24h. awarded 1st place out of 400+ participants. created the idea, script, presentation, user research, wireframes, mockups, custom graphics, video editing, and ux/ui design in figma prototype, utilizing adobe creative suite',
   },
   {
     title: 'storiator',
@@ -18,7 +18,7 @@ const projects = [
     title: 'studyscout',
     tags: ['hackathon project', 'ux design', 'frontend'],
     image: './images/studyThumb.png',
-    desc: 'designed user experience and programmed frontend to deploy functional website for nwhacks 2024.',
+    desc: 'made in 24h. designed ux/ui and programmed frontend in react and typescript to deploy functional website for nwhacks 2024 ',
   },
 
   {
@@ -40,7 +40,7 @@ function ProjectComponent({ title, tags, image, desc }) {
         bgPosition="top"
         bgImage={`url(${image})`} // Use template literals to set the background image
         bgSize="cover" // Ensure the background image covers the entire box
-        boxShadow="0 12px 12px rgba(0, 0, 0, 0.25)"
+        boxShadow="0 4px 12px rgba(63, 57, 69, 0.1)"
         borderRadius="6px"
       ></Box>
       <Text
@@ -73,7 +73,7 @@ function ProjectGrid() {
   return (
     <Grid
       templateColumns={['1fr', '1fr', '1fr 1fr']}
-      paddingInline="1rem"
+      marginInline="4rem"
       gap={4}
     >
       {projects.map((project, index) => (

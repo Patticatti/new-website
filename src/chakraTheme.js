@@ -9,9 +9,9 @@ const colors = {
   },
   base: {
     900: `#000000`,
-    700: `#1C1C1C`,
-    500: `#575757`,
-    300: `#868686`,
+    700: `#212121`,
+    500: `#666666`,
+    300: `#9E9E9E`,
   },
   gradient: `linear-gradient(to right, #FF00A8, #FFB321)`,
   transparent: `#00000000`,
