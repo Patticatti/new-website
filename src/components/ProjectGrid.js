@@ -1,6 +1,13 @@
 import { Text, Stack, Grid, Box, Heading } from '@chakra-ui/react'
+import React from 'react'
 
 const projects = [
+  {
+    title: 'reverie',
+    tags: ['hackathon project', 'ux design'],
+    image: './images/reverieThumb.png',
+    desc: 'awarded 1st place out of 400+ participants. created the idea, script, presentation, user research, wireframes, mockups, custom graphics, video editing, and ux/ui design in figma prototype, utilizing adobe creative suite',
+  },
   {
     title: 'storiator',
     tags: ['volunteer', 'ux design', 'frontend'],
@@ -10,15 +17,10 @@ const projects = [
   {
     title: 'studyscout',
     tags: ['hackathon project', 'ux design', 'frontend'],
-    image: './logo192.png',
+    image: './images/studyThumb.png',
     desc: 'designed user experience and programmed frontend to deploy functional website for nwhacks 2024.',
   },
-  {
-    title: 'storiator',
-    tags: ['volunteer', 'ux design', 'frontend'],
-    image: './images/storiatorThumb.png',
-    desc: 'awarded 3x place out of 700 participants. designed user experience and programmed frontend to deploy functional website for nwhacks 2024.',
-  },
+
   {
     title: 'studyscout',
     tags: ['hackathon project', 'ux design', 'frontend'],
@@ -28,6 +30,9 @@ const projects = [
 ]
 
 function ProjectComponent({ title, tags, image, desc }) {
+  let tagString = tags
+    .map((tag, index) => (index !== 0 ? ' • ' : '') + tag)
+    .join('')
   return (
     <Stack marginBlock="2rem" gap="0">
       <Box
@@ -39,19 +44,14 @@ function ProjectComponent({ title, tags, image, desc }) {
         borderRadius="6px"
       ></Box>
       <Text
+        as="span"
+        width="fit-content"
         marginTop="1.6rem"
-        style={{
-          backgroundImage: 'linear-gradient(to right, #FF00A8, #FF9921)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}
+        bgImage="linear-gradient(to right, #FF00A8, #FFB321)"
+        bgSize="cover"
+        backgroundClip="text"
       >
-        {tags.map((tag, index) => (
-          <span key={index}>
-            {index !== 0 && <>&nbsp;&bull;&nbsp;</>}
-            {tag}
-          </span>
-        ))}
+        {tagString}
       </Text>
       <Stack direction="row" alignItems="center">
         <Heading>{title}</Heading>
