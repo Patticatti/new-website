@@ -5,26 +5,37 @@ import ProjectGrid from './components/ProjectGrid'
 function App() {
   return (
     <Box bg="white">
-      <Stack>
+      <Stack alignItems="center">
         <Navbar />
         <Flex
           direction={['column-reverse', 'column-reverse', 'row']}
-          justifyContent="center"
+          justifyContent="space-between"
           alignItems="center"
           paddingBlock="5rem"
-          gap="8%"
+          maxWidth="1000px"
+          justifySelf="center"
         >
           <Stack
-            maxW={['85%', '85%', '35%']}
+            maxW={['85%', '85%', '465px']}
             textAlign={['center', 'center', 'left']}
+            marginLeft={['0', '0', '48px']}
           >
             <Text fontSize="xl" color="base.700">
               hello,
             </Text>
-            <Heading fontSize={['6xl', '6xl', '8xl']} letterSpacing="-0.03em">
+            <Heading
+              fontSize={['6xl', '6xl', '8xl']}
+              letterSpacing="-0.03em"
+              lineHeight="0.8em"
+            >
               im patti.
             </Heading>
-            <Text color="base.700" fontSize="xl" lineHeight="1.4em">
+            <Text
+              color="base.700"
+              fontSize="xl"
+              lineHeight="1.4em"
+              marginTop="1rem"
+            >
               a{' '}
               <Text
                 as="span"

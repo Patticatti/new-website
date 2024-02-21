@@ -73,7 +73,7 @@ function ProjectGrid() {
   return (
     <Grid
       templateColumns={['1fr', '1fr', '1fr 1fr']}
-      marginInline="4rem"
+      marginInline={['1rem', '1rem', '4rem']}
       gap={4}
     >
       {projects.map((project, index) => (
