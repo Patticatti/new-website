@@ -7,10 +7,10 @@ function App() {
     <Box bg="white">
       <Stack>
         <Navbar/>
-        <Flex direction={["column-reverse","row","row"]}justifyContent="center" alignItems="center" gap={["8%"]}>
-          <Stack maxW={["85%","40%","30%"]}>
+        <Flex direction={["column-reverse","column-reverse","row"]}justifyContent="center" alignItems="center" gap={["8%"]}>
+          <Stack maxW={["85%","85%","30%"]} textAlign={["center","center", "left"]}>
             <Text fontSize="xl">hello,</Text>
-            <Heading fontSize={["4xl","6xl","8xl"]} letterSpacing="-0.03em">im patti.</Heading>
+            <Heading fontSize={["6xl","6xl","8xl"]} letterSpacing="-0.03em">im patti.</Heading>
             <Text color="black" fontSize="xl" lineHeight="1.4em">
               a <Text
                 as="span"
