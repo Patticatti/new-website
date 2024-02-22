@@ -65,7 +65,7 @@ function ProjectComponent({ title, tags, image, desc }) {
         />
       </Stack>
       <Text
-        lineHeight="1.4em"
+        lineHeight="1.6em"
         marginTop="0.5rem"
         color="base.500"
         fontWeight="light"
