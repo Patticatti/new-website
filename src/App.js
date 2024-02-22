@@ -1,17 +1,29 @@
 import { Box, Stack, Text, Heading, Flex } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
 import ProjectGrid from './components/ProjectGrid'
-import { useRef } from 'react'
+import { useRef, useState, useEffect, createRef } from 'react'
 
 function App() {
   const scrollWork = useRef(null)
   const scrollToWork = () => {
     scrollWork.current?.scrollIntoView({ behavior: 'smooth' })
   }
+  const scrollAbout = useRef(null)
+  const scrollToAbout = () => {
+    scrollAbout.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+  const scrollTop = useRef(null)
+  const scrollToTop = () => {
+    scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <Box bg="white">
       <Stack alignItems="center">
-        <Navbar scrollToWork={scrollToWork} />
+        <Navbar
+          scrollToWork={scrollToWork}
+          scrollToAbout={scrollToAbout}
+          scrollToTop={scrollToTop}
+        />
         <Flex
           direction={['column-reverse', 'column-reverse', 'row']}
           justifyContent="space-between"
@@ -19,6 +31,7 @@ function App() {
           paddingBlock="5rem"
           maxWidth="1000px"
           justifySelf="center"
+          ref={scrollTop}
         >
           <Stack
             maxW={['85%', '85%', '465px']}
@@ -76,7 +89,7 @@ function App() {
         <ProjectGrid />
         <Stack marginBlock={['12rem', '12rem', '16rem']} gap="0">
           <Text color="base.500">im a firm believer that...</Text>
-          <Heading fontSize="6xl">
+          <Heading fontSize="6xl" ref={scrollAbout}>
             you can learn{' '}
             <Heading
               as="span"
