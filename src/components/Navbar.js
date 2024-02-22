@@ -1,7 +1,7 @@
 import { Text, Link, Flex } from '@chakra-ui/react'
 import { LuMenu } from 'react-icons/lu'
 
-function Navbar({ scrollToWork, scrollToAbout, scrollToTop }) {
+function Navbar({ scrollToRef }) {
   return (
     <Flex
       justifyContent="space-between"
@@ -17,7 +17,7 @@ function Navbar({ scrollToWork, scrollToAbout, scrollToTop }) {
         padding="1rem"
         fontWeight="semibold"
         marginLeft="1rem"
-        onClick={scrollToTop}
+        onClick={() => scrollToRef(0)}
       >
         patti tani
       </Text>
@@ -32,7 +32,7 @@ function Navbar({ scrollToWork, scrollToAbout, scrollToTop }) {
             color: '#FF00A8',
             // textShadow: '0 0px 8px rgba(255, 0, 168, 0.4)',
           }}
-          onClick={scrollToWork}
+          onClick={() => scrollToRef(1)}
           display={['none', 'none', 'flex']}
           cursor="pointer"
         >
@@ -61,7 +61,7 @@ function Navbar({ scrollToWork, scrollToAbout, scrollToTop }) {
             color: '#FF00A8',
             // textShadow: '0 0px 8px rgba(255, 0, 168, 0.4)',
           }}
-          onClick={scrollToAbout}
+          onClick={() => scrollToRef(2)}
           display={['none', 'none', 'flex']}
           cursor="pointer"
         >

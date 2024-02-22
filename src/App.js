@@ -5,26 +5,15 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 
 function App() {
-  const scrollWork = useRef(null)
-  const scrollToWork = () => {
-    scrollWork.current?.scrollIntoView({ behavior: 'smooth' })
+  const refs = useRef([null, null, null])
+  const scrollToRef = (index) => {
+    refs.current[index]?.scrollIntoView({ behavior: 'smooth' })
   }
-  const scrollAbout = useRef(null)
-  const scrollToAbout = () => {
-    scrollAbout.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-  const scrollTop = useRef(null)
-  const scrollToTop = () => {
-    scrollTop.current?.scrollIntoView({ behavior: 'smooth' })
-  }
+
   return (
     <Box bg="white">
       <Stack alignItems="center">
-        <Navbar
-          scrollToWork={scrollToWork}
-          scrollToAbout={scrollToAbout}
-          scrollToTop={scrollToTop}
-        />
+        <Navbar scrollToRef={scrollToRef} />
         <Flex
           direction={['column-reverse', 'column-reverse', 'row']}
           justifyContent="space-between"
@@ -32,7 +21,7 @@ function App() {
           paddingBlock="5rem"
           maxWidth="1000px"
           justifySelf="center"
-          ref={scrollTop}
+          ref={(el) => (refs.current[0] = el)}
         >
           <Stack
             maxW={['85%', '85%', '465px']}
@@ -88,14 +77,14 @@ function App() {
           fontSize="4xl"
           letterSpacing="-0.04em"
           fontWeight="regular"
-          ref={scrollWork}
+          ref={(el) => (refs.current[1] = el)}
         >
           check out my stuff 👇
         </Heading>
         <ProjectGrid />
         <Stack marginBlock={['12rem', '12rem', '16rem']} gap="0">
           <Text color="base.500">im a firm believer that...</Text>
-          <Heading fontSize="6xl" ref={scrollAbout}>
+          <Heading fontSize="6xl" ref={(el) => (refs.current[2] = el)}>
             you can learn{' '}
             <Heading
               as="span"
@@ -115,15 +104,19 @@ function App() {
           </Text>
         </Stack>
         <Stack>
-          <Text>
-            made by me in react.js :D{' '}
-            <Link
-              color="primary"
-              src="https://github.com/Patticatti/new-website"
-            >
-              check out the repo
-            </Link>
-          </Text>
+          <Flex alignItems="center">
+            <Text opacity="87%" fontSize="sm" padding="0.5rem">
+              coded by me with ☕ {' • '}
+              <Link
+                color="primary"
+                href="https://github.com/Patticatti/new-website"
+                target="_blank"
+                textDecoration="underline"
+              >
+                check out the repo
+              </Link>
+            </Text>
+          </Flex>
         </Stack>
       </Stack>
     </Box>
